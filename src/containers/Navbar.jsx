@@ -18,7 +18,7 @@ export default class Navbar extends React.Component {
   componentDidMount() {
     this.listener = document.addEventListener("scroll", (e) => {
       var scrolled = document.scrollingElement.scrollTop;
-      if (scrolled >= 500) {
+      if (scrolled >= 100) {
         if (this.state.status !== "scrolled") {
           this.setState({ status: "scrolled" });
         }
@@ -84,9 +84,9 @@ export default class Navbar extends React.Component {
       <nav
         className={`navbar-container ${this.state.status === "scrolled" ? "shrink" : ""}`}
         style={{
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
-          backdropFilter: this.state.status === "scrolled" ? "blur(10px)" : "blur(5px)",
-          boxShadow: this.state.status === "scrolled" ? "0 4px 30px rgba(0, 0, 0, 0.2)" : "none",
+          backgroundColor: this.state.status === "scrolled" ? "rgba(0, 0, 0, 0.8)" : "rgba(0, 0, 0, 0)",
+          backdropFilter: this.state.status === "scrolled" ? "blur(10px)" : "none",
+          boxShadow: this.state.status === "scrolled" ? "0 4px 30px rgba(0, 0, 0, 0.3)" : "none",
           borderBottom: this.state.status === "scrolled" ? "1px solid rgba(255, 255, 255, 0.1)" : "none"
         }}
       >
@@ -94,7 +94,7 @@ export default class Navbar extends React.Component {
           <img
             src="./images/navbar/pharma_icon.svg"
             alt="logo"
-            style={{ opacity: this.state.status === "top" ? "0.7" : "1" }}
+            style={{ opacity: this.state.status === "top" ? "0.9" : "1" }}
           />
         </div>
         <div className="n-tabs">
