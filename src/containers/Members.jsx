@@ -10,7 +10,7 @@ export default class Members extends React.Component{
                 <div className='m-prez'>
                     <div className='m-committees'><span>Pharmahacks President</span></div>  
                     <div className='m-prezImg'>
-                        <Member img="2024_members/Onur_Gul.png" n="Onur Gul" position="President" field="U2 Mathematics/Computer Science" className = "vp-border"/>
+                        <Member img="public/images/members/2025_members/Onur_Gul.png" n="Onur Gul" position="President" field="U3 Mathematics/Computer Science" className = "vp-border"/>
                     </div>
                     {/* <div className='m-prezText'>
                         <span> "We are a group of students passionate about facilitating the transition of students from academia to industry by organizing <br/>
