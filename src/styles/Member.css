@@ -57,7 +57,7 @@
     height: 100%;
     border-radius: 50%; /* Make the image circular */
     object-fit: cover; /* Ensures the image covers the circular area without distortion */
-    object-position: center top; /* Focus on top of image to avoid cropping heads */
+    object-position: center center; /* Center the image both horizontally and vertically */
     transition: all 200ms ease;
 }
 
