@@ -13,18 +13,22 @@ const InstagramAnnouncementModal = () => {
       const now = new Date().getTime();
       if (now - data.timestamp < announcementExpiry) {
         setIsVisible(true);
-        document.body.classList.add('modal-open');
+        document.body.style.overflow = 'hidden';
       }
     }
 
-    // Cleanup function to remove the class from the body when component unmounts
-    return () => document.body.classList.remove('modal-open');
+    // Cleanup function to remove the class and restore scroll when component unmounts
+    return () => {
+      document.body.classList.remove('modal-open');
+      document.body.style.overflow = 'auto';
+    };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const closeModal = () => {
     setIsVisible(false);
     document.body.classList.remove('modal-open');
+    document.body.style.overflow = 'auto';
   };
 
   if (!isVisible) return null;

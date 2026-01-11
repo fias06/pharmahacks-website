@@ -60,13 +60,20 @@
   }
   
 
-  /* When modal is visible, disable interactions with the background */
+  /* When modal is visible, disable scroll on body but keep pointer events */
 body.modal-open {
     overflow: hidden;
-    pointer-events: none;
   }
-  /* Allow pointer events for the modal even when the background is disabled */
-  .modal, .modal * {
+  /* Ensure modal and its content remain interactive */
+  .modal {
+    pointer-events: auto;
+  }
+  
+  .modal-content {
+    pointer-events: auto;
+  }
+  
+  .modal-content * {
     pointer-events: auto;
   }
   
