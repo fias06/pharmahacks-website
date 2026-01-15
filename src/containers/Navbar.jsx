@@ -36,6 +36,8 @@ export default class Navbar extends React.Component {
   componentWillUnmount() {
     document.removeEventListener("scroll", this.listener);
     document.removeEventListener('mousedown', this.handleClickOutside);
+    // Ensure scroll is restored when component unmounts
+    document.body.style.overflow = "auto";
   }
 
   // Handle clicking outside the dropdown
@@ -56,10 +58,12 @@ export default class Navbar extends React.Component {
 
   openNav = () => {
     document.getElementById("mySidebar").style.width = "250px";
+    document.body.style.overflow = "hidden";
   }
 
   closeNav = () => {
     document.getElementById("mySidebar").style.width = "0";
+    document.body.style.overflow = "auto";
   }
 
   navigateHome = () => {
