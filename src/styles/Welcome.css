@@ -8,6 +8,7 @@
     padding: 120px 10%;
     position: relative;
     overflow: hidden;
+    touch-action: auto;
 }
 
 .w-background-container {

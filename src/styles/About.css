@@ -4,6 +4,7 @@
     background-color: #000D1B;
     position: relative;
     overflow: hidden;
+    touch-action: auto;
 }
 
 /* Add purple styling elements to the About section */

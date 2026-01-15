@@ -1,10 +1,19 @@
 ::-webkit-scrollbar{width:6px; height: 0px;}::-webkit-scrollbar-track{box-shadow:inset 0 0 20px rgba(0,0,0,.3)}::-webkit-scrollbar-thumb{box-shadow:inset 0 0 200px rgba(0,0,0,.5);border-radius:5px;cursor:pointer}::-webkit-scrollbar-thumb:hover{background:#546c77}::-webkit-scrollbar-thumb:active{background:#43565f}
 html {
   scroll-behavior: smooth;
+  touch-action: auto;
 }
+
+/* Disable smooth scroll on mobile to fix scroll lag */
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body{
   background-color: #000D1B; /* temporary */
-
+  touch-action: auto;
 }
 
 .App {
