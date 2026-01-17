@@ -61,6 +61,7 @@ export default class Members extends React.Component{
                     <Member img="2025_members/Dowoo_Kim.jpg" n="Dowoo Kim" position="ML & Sponsorship Liason" field="U3 Statistics/Computer Science" className="non-vp-border"/>
                     <Member img="2025_members/Aymen.jpg" n="Aymen Boustani" position="Machine Learning" field="U4 Mechanical Engineering, Minor Applied AI"className="non-vp-border"/>
                     <Member img="2025_members/Dev_Patel.jpg" n="Dev Patel" position="Machine Learning" field="Computer Science Graduate"className="non-vp-border"/>
+                    <Member img="2025_members/Aaron.jpg" n="Aaron Menezes" position="Machine Learning" field="U0 Software Engineering"className="non-vp-border"/>
                     </div>
                     <div className='m-committees'><span>Web Development</span></div> 
                     <div className='m-list'>
