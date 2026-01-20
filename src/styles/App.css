@@ -19,6 +19,15 @@ body{
 .App {
   text-align: center;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fix mobile scroll issues */
+@media (max-width: 768px) {
+  .App {
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
 }
 
 .App-logo {

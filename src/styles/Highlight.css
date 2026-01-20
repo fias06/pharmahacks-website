@@ -1,4 +1,4 @@
-/* Event 2024 Page Styling - Using Event2025 Design */
+/* Event 2024 Page Styling - Same design as Event2025 */
 :root {
     --primary-color: #000e1b;
     --secondary-color: #071e2f;
@@ -8,12 +8,6 @@
     --bg-gradient-start: #000e1b;
     --bg-gradient-end: #071e2f;
     --transition-speed: 0.3s;
-}
-
-/* Ensuring the body has no default margin */
-body {
-  margin: 0;
-  padding: 0;
 }
 
 .highlight-container {
@@ -30,7 +24,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0;
 }
 
 /* Animated Background */
@@ -137,17 +130,8 @@ body {
     }
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 /* Header Section */
-.event-logo {
+.event-header {
     padding: 100px 20px 40px;
     text-align: center;
     animation: fadeIn 1.5s ease-in-out;
@@ -160,7 +144,7 @@ body {
     align-items: center;
 }
 
-.logo {
+.event-logo-img {
     max-width: 400px;
     width: 90%;
     height: auto;
@@ -169,31 +153,91 @@ body {
     display: block;
 }
 
+.event-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin: 0 auto;
+    color: var(--text-color);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.event-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--highlight-color), transparent);
+}
+
 /* Section Container */
-.media-container {
+.section-container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 15px;
+    padding: 0 15px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 50px;
 }
 
-.media-description {
-    font-size: 1.1rem;
-    color: var(--text-color);
+/* Fix specific issues with section titles */
+.section-title {
+    display: block;
+    width: 100%;
     text-align: center;
-    margin: 20px 0;
-    animation: fadeIn 2s;
-    max-width: 800px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: var(--text-color);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
-/* Video and Photo Containers */
-.video-container, .photo-carousel {
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--highlight-color), transparent);
+    border-radius: 2px;
+}
+
+/* Section Styling */
+section {
+    padding: 80px 20px;
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Video Section */
+.event-video-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Ensure video is centered */
+.video-container {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
@@ -207,47 +251,179 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.video-container:hover, .photo-carousel:hover {
+.video-container:hover {
     transform: perspective(1000px) rotateX(0deg);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
-.event-video, .event-photo {
+.event-video {
     width: 100%;
     height: auto;
     display: block;
     background-color: #000;
     max-width: 100%;
-    border-radius: 16px;
 }
 
-.event-photo {
+/* Gallery Section */
+.event-gallery-section {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fix gallery alignment */
+.gallery-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-/* Executives Section */
-.executive-info-block {
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 22px;
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gallery-nav:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-prev {
+    left: 10px;
+}
+
+.gallery-next {
+    right: 10px;
+}
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.gallery-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gallery-dot.active {
+    background-color: var(--highlight-color);
+    transform: scale(1.3);
+}
+
+/* Testimonials Section - Updated with horizontal slider */
+.event-testimonials-section {
+    margin-bottom: 80px;
+}
+
+.testimonials-multi-container {
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    padding: 0 50px;
     margin: 0 auto;
-    width: 90%;
-    max-width: 600px;
+}
+
+.testimonials-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.testimonials-track {
+    display: flex;
+    width: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+.testimonials-page {
+    flex: 0 0 100%;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.testimonial-card {
+    flex: 0 0 calc(33.333% - 26.667px);
     background-color: rgba(0, 14, 27, 0.6);
     border-radius: 16px;
-    padding: 40px 20px;
+    padding: 30px 20px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 0.3s ease;
-    margin-bottom: 30px;
+    min-height: 550px;
+    transition: none;
 }
 
-.executive-info-block:hover {
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+.testimonial-card:hover {
+    transform: none;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
-.executive-img {
+.testimonial-image {
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -255,25 +431,57 @@ body {
     margin-bottom: 20px;
     border: 3px solid var(--highlight-color);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    object-fit: cover;
+    position: relative;
 }
 
-.executive-name {
+.testimonial-image img {
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
+    object-position: 50% 30%;
+    position: absolute;
+    top: -10%;
+    left: -10%;
+}
+
+.testimonial-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--accent-color), var(--highlight-color));
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.testimonial-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.testimonial-content h3 {
+    margin: 0 0 5px;
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--highlight-color);
-    margin: 10px 0 5px;
 }
 
-.executive-position {
+.testimonial-content h4 {
+    margin: 0 0 5px;
     font-size: 1rem;
     font-weight: 500;
     color: var(--text-color);
     opacity: 0.9;
-    margin: 0 0 5px;
 }
 
-.executive-field {
+.testimonial-field {
     font-size: 0.9rem;
     font-weight: 400;
     color: var(--text-color);
@@ -281,56 +489,469 @@ body {
     margin-bottom: 15px;
 }
 
-.executive-bio {
+.testimonial-quote-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.testimonial-quote {
     font-size: 0.95rem;
     line-height: 1.5;
     color: var(--text-color);
     opacity: 0.9;
     text-align: center;
     font-style: italic;
+    position: relative;
+    padding: 0 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 0;
+    width: 100%;
+}
+
+/* Navigation buttons */
+.testimonial-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: 5;
+    transition: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.testimonial-nav:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%);
+    box-shadow: none;
+}
+
+.testimonial-prev {
+    left: 0;
+}
+
+.testimonial-next {
+    right: 0;
+}
+
+/* Responsive design for testimonials */
+@media (max-width: 1200px) {
+    /* Single testimonial per page on tablets and smaller screens */
+    .testimonials-page {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+    }
+    
+    .testimonial-card {
+        flex: 0 0 100%;
+        max-width: 90%;
+        width: 90%;
+        min-height: auto;
+        margin: 0 auto;
+    }
+    
+    .testimonials-multi-container {
+        padding: 0 40px;
+    }
+    
+    /* Ensure the slider shows only one testimonial */
+    .testimonials-slider {
+        overflow: hidden;
+    }
+    
+    .testimonials-track {
+        width: 100%;
+    }
+    
+    /* Single testimonial per page on non-desktop */
+    .testimonials-mobile-single .testimonials-page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .testimonials-mobile-single .testimonial-card {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-multi-container {
+        padding: 0 30px;
+    }
+    
+    .testimonial-card {
+        max-width: 100%;
+        padding: 30px 15px;
+        height: auto;
+    }
+    
+    .testimonial-image {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 15px;
+        position: relative;
+    }
+    
+    .testimonial-image img {
+        width: 120%;
+        height: 120%;
+        object-fit: cover;
+        object-position: 50% 30%;
+        position: absolute;
+        top: -10%;
+        left: -10%;
+    }
+    
+    .testimonial-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .testimonial-content h4 {
+        font-size: 0.9rem;
+    }
+    
+    .testimonial-quote-container {
+        margin-top: 10px;
+    }
+    
+    .testimonial-quote {
+        font-size: 0.9rem;
+        max-height: 150px;
+        padding: 0 5px;
+    }
+    
+    .testimonial-nav {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+    
+    .testimonial-prev {
+        left: -5px;
+    }
+    
+    .testimonial-next {
+        right: -5px;
+    }
+    
+    .testimonial-field {
+        margin-bottom: 5px;
+    }
+}
+
+/* Custom scrollbar for testimonial quotes */
+.testimonial-quote::-webkit-scrollbar {
+    width: 4px;
+}
+
+.testimonial-quote::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.testimonial-quote::-webkit-scrollbar-thumb {
+    background: rgba(95, 180, 229, 0.3);
+    border-radius: 10px;
+}
+
+.testimonial-quote::-webkit-scrollbar-thumb:hover {
+    background: rgba(95, 180, 229, 0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive Design */
+@media (max-width: 992px) {
+    .event-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .gallery-container {
+        height: 400px;
+    }
+    
+    .testimonial-image {
+        width: 120px;
+        height: 120px;
+    }
+}
+
 @media (max-width: 768px) {
-    .event-logo {
-        padding: 60px 20px 30px;
+    .event-title {
+        font-size: 1.7rem;
     }
-
-    .logo {
-        max-width: 250px;
-        margin-bottom: 20px;
+    
+    .section-title {
+        font-size: 1.6rem;
     }
-
-    .media-container {
-        padding: 40px 15px;
-        gap: 30px;
+    
+    .gallery-container {
+        height: 300px;
     }
-
-    .video-container, .photo-carousel {
-        max-width: 100%;
+    
+    .gallery-prev {
+        left: 10px;
     }
-
-    .executive-info-block {
-        width: 95%;
-        max-width: 100%;
-        padding: 30px 15px;
+    
+    .gallery-next {
+        right: 10px;
     }
+    
+    .testimonial-wrapper {
+        padding: 20px;
+    }
+    
+    .testimonial-image {
+        transform: translateY(-30px);
+    }
+    
+    .testimonial-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .testimonial-content h4 {
+        font-size: 1.1rem;
+    }
+    
+    .testimonial-quote {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+}
 
-    .executive-img {
+@media (max-width: 480px) {
+    .event-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.4rem;
+    }
+    
+    .gallery-container {
+        height: 250px;
+    }
+    
+    .testimonial-image {
         width: 100px;
         height: 100px;
     }
-
-    .executive-name {
-        font-size: 1.2rem;
+    
+    .testimonial-content h3 {
+        font-size: 1.3rem;
     }
-
-    .media-description {
+    
+    .testimonial-content h4 {
+        font-size: 1rem;
+    }
+    
+    .testimonial-quote {
         font-size: 1rem;
     }
 }
 
-/* Ensure that all elements inside the container are aligned properly */
-* {
-    box-sizing: border-box;
+/* Add styles for sparkles */
+.sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--highlight-color);
+    box-shadow: 0 0 10px 2px rgba(95, 180, 229, 0.7);
+    animation: twinkle 8s infinite ease-in-out;
+    z-index: 0;
+}
+
+.sparkle1 {
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.sparkle2 {
+    top: 25%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.sparkle3 {
+    bottom: 20%;
+    left: 15%;
+    animation-delay: 4s;
+}
+
+.sparkle4 {
+    bottom: 30%;
+    right: 10%;
+    animation-delay: 6s;
+}
+
+.sparkle5 {
+    top: 50%;
+    left: 50%;
+    animation-delay: 8s;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+/* Event date badge */
+.event-date-badge {
+    background: linear-gradient(135deg, var(--accent-color), var(--highlight-color));
+    color: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 20px;
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: pulse-badge 3s infinite;
+    position: relative;
+}
+
+.event-date-badge::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, var(--highlight-color), var(--accent-color));
+    z-index: -1;
+    opacity: 0.5;
+    animation: pulse-border 3s infinite;
+}
+
+@keyframes pulse-badge {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes pulse-border {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* Quick navigation buttons */
+.quick-nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px auto 0;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 500px;
+}
+
+.quick-nav-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.quick-nav-button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 480px) {
+    .quick-nav-buttons {
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .quick-nav-button {
+        padding: 6px 15px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Ensure all p tags are centered */
+p {
+    text-align: center;
+}
+
+/* Testimonial dots */
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 25px auto 0;
+    padding: 0 20px;
+}
+
+.testimonial-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 5px;
+    cursor: pointer;
+    transition: none;
+}
+
+.testimonial-dot.active {
+    background-color: var(--highlight-color);
+    transform: none;
 }

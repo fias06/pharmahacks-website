@@ -1,7 +1,12 @@
 .contact-container{
     background-color:#fafafa;
     max-width:100vw;
+}
+
+@media (min-width: 769px) {
+  .contact-container {
     max-height: 40vw;
+  }
 }
 .contact-apply-section{
     max-height: 40vw;
