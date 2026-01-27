@@ -25,13 +25,13 @@ export default class Welcome extends React.Component {
                 </div>
                 
                 <div className="w-title-section">
-                    <img src="./images/welcome/pharma2025.png" alt="Pharmahacks 2025" className="w-title-text" />
+                    <img src="./images/welcome/pharma2025.png" alt="Pharmahacks 2026" className="w-title-text" />
                     
-                    {/* Refined Thematic Text */}
+                    {/* Hackathon Date */}
                     <div className="thematic-text">
-                        <span role="img" aria-label="sparkles">✨</span>
-                        {" "}See you in 2026!{" "}
-                        <span role="img" aria-label="sparkles">✨</span>
+                        <span role="img" aria-label="calendar">📅</span>
+                        {" "}March 21-22, 2026{" "}
+                        <span role="img" aria-label="calendar">📅</span>
                     </div>
 
                     {/* Button to the application form */}
@@ -40,7 +40,7 @@ export default class Welcome extends React.Component {
                             className="apply-button"
                             type="button"
                         >
-                            Come Back Next Year!
+                            Applications Opening Soon!
                         </button>
                     </div>
                 </div>
