@@ -25,7 +25,7 @@ export default class Welcome extends React.Component {
                 </div>
                 
                 <div className="w-title-section">
-                    <img src="./images/welcome/pharma2025.png" alt="Pharmahacks 2026" className="w-title-text" />
+                    <img src="./images/welcome/PharmaHacks_2026.PNG.jpg" alt="Pharmahacks 2026" className="w-title-text" />
                     
                     {/* Hackathon Date */}
                     <div className="thematic-text">
