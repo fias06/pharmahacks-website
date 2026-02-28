@@ -25,7 +25,7 @@ export default class Welcome extends React.Component {
                 </div>
                 
                 <div className="w-title-section">
-                    <img src="./images/welcome/PharmaHacks_2026.PNG.jpg" alt="Pharmahacks 2026" className="w-title-text" />
+                    <img src="./images/welcome/pharmanew.png" alt="Pharmahacks 2026" className="w-title-text" />
                     
                     {/* Hackathon Date */}
                     <div className="thematic-text">
@@ -36,12 +36,14 @@ export default class Welcome extends React.Component {
 
                     {/* Button to the application form */}
                     <div className="application-link">
-                        <button 
+                        <a 
+                            href="https://forms.office.com/Pages/ResponsePage.aspx?id=cZYxzedSaEqvqfz4-J8J6lvG0cUUYTVNm7ol7OXrtutUNjZPUEZCS1VBSU9IN0ZNSk9RNUMzR1FRVS4u"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="apply-button"
-                            type="button"
                         >
-                            Applications Opening Soon!
-                        </button>
+                            Applications Open Now!
+                        </a>
                     </div>
                 </div>
 
